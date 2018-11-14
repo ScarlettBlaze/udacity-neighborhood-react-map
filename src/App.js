@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../src/styles/App.css';
 import Map from './components/Map';
-import SquareAPI from './API/FourSquareAPI'
+import SquareAPI from './API/FourSquareAPI';
+import SideBar from './components/SideBar';
 
 class App extends Component {
 
@@ -50,6 +51,10 @@ class App extends Component {
     });
   }
 
+  onListItemClick = venue => {
+    console.log(venue);
+  }
+
   closeMarkers = () => {
     const markers = this.state.markers.map(marker => {
       marker.isOpen = false;
@@ -61,6 +66,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <SideBar {...this.state} onListItemClick={this.onListItemClick}/>
         <Map 
           {...this.state} 
           onMarkerClick={this.onMarkerClick}

@@ -24,6 +24,7 @@ const MyMapComponent = withScriptjs(
                                     <img src={`${venueInfo.bestPhoto.prefix}150x150${venueInfo.bestPhoto.suffix}`} alt={venueInfo.suffix}/>
                                     <p>{venueInfo.name}</p>
                                     <p>{venueInfo.location.address}</p>
+                                    <p>{venueInfo.location.city}, {venueInfo.location.state} {venueInfo.location.postalCode}</p>
                                 </React.Fragment>
                             </InfoWindow>
                         )}
@@ -33,6 +34,7 @@ const MyMapComponent = withScriptjs(
                                 <React.Fragment>
                                     <p>{venueInfo.name}</p>
                                     <p>{venueInfo.location.address}</p>
+                                    <p>{venueInfo.location.city}, {venueInfo.location.state} {venueInfo.location.postalCode}</p>
                                 </React.Fragment>
                             </InfoWindow>
                         )}
