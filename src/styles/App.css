@@ -7,28 +7,21 @@
   flex-flow: row nowrap;
   overflow: hidden;
 }
-@media screen and (max-width) {
-   .App{
-    display: inline-block;
-    position: absolute;
-  }
-}
 
 .sideBar {
-  width: 25%;
-  position: relative;
-  overflow-y: scroll;
+  width: 100%;
   top: 0;
   bottom: 0;
   background-color: rgb(37, 108, 167);
 }
 
 input#search {
-  width: 20%;
+  width:  100%;
   height: 2rem;
   font-size: 1rem;
-  position: fixed;
+  position: relative;
   left: 0;
+  top: 0;
 }
 
 ol.placeList {

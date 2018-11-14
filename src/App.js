@@ -3,16 +3,18 @@ import '../src/styles/App.css';
 import Map from './components/Map';
 import SquareAPI from './API/FourSquareAPI';
 import SideBar from './components/SideBar';
+import {slide as Menu} from 'react-burger-menu';
 
 class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       venues: [],
       markers: [],
       center: [],
       zoom: 12,
+      menuOpen: true,
       updateSuperState: obj => {
         this.setState(obj);
       }
@@ -33,12 +35,23 @@ class App extends Component {
           lng: venue.location.lng,
           isOpen: false,
           isVisible: true,
-          id: venue.id
-
+          id: venue.id,
         };
       });
       this.setState({venues, center, markers});
     });
+  }
+
+  handleStateChange (state) {
+    this.setState({menuOpen: state.isOpen})  
+  }
+
+  closeMenu () {
+    this.setState({menuOpen: false})
+  }
+
+  toggleMenu () {
+    this.setState({menuOpen: !this.state.menuOpen})
   }
 
   onMarkerClick = (marker) => {
@@ -70,10 +83,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SideBar 
-          {...this.state} 
-          onListItemClick={this.onListItemClick}
-        />
+        <Menu isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)}>
+            <SideBar 
+              {...this.state} 
+              onListItemClick={this.onListItemClick}
+            />
+          </Menu>
         <Map 
           {...this.state} 
           onMarkerClick={this.onMarkerClick}
