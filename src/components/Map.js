@@ -16,7 +16,8 @@ const MyMapComponent = withScriptjs(
                         key={index} 
                         position={{ lat: marker.lat, lng: marker.lng }} 
                         onClick={() => props.onMarkerClick(marker)}
-                    >
+                    >   
+                        {/*If the marker is open and has a bestPhoto, open with everything listed.*/}
                         {marker.isOpen && venueInfo.bestPhoto && (
                             <InfoWindow>
                                 <React.Fragment>
@@ -26,6 +27,7 @@ const MyMapComponent = withScriptjs(
                                 </React.Fragment>
                             </InfoWindow>
                         )}
+                        {/*If the marker is open but has no bestPhoto, open without the image.*/}
                         {marker.isOpen && !venueInfo.bestPhoto && (
                             <InfoWindow>
                                 <React.Fragment>
