@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import PlaceList from './PlaceList';
+//import '../styles/SideBar.css';
+//import {slide as Menu} from 'react-burger-menu';
 
 export default class SideBar extends Component {
     constructor() {

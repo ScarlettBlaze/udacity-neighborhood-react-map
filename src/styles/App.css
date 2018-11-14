@@ -7,6 +7,12 @@
   flex-flow: row nowrap;
   overflow: hidden;
 }
+@media screen and (max-width) {
+   .App{
+    display: inline-block;
+    position: absolute;
+  }
+}
 
 .sideBar {
   width: 25%;
