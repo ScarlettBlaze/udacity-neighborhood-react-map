@@ -52,7 +52,8 @@ class App extends Component {
   }
 
   onListItemClick = venue => {
-    console.log(venue);
+    const marker = this.state.markers.find(marker => marker.id === venue.id);
+    this.onMarkerClick(marker);
   }
 
   closeMarkers = () => {
@@ -66,7 +67,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SideBar {...this.state} onListItemClick={this.onListItemClick}/>
+        <SideBar 
+          {...this.state} 
+          onListItemClick={this.onListItemClick}
+        />
         <Map 
           {...this.state} 
           onMarkerClick={this.onMarkerClick}
