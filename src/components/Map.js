@@ -22,9 +22,8 @@ const MyMapComponent = withScriptjs(
                             <InfoWindow>
                                 <React.Fragment>
                                     <img src={`${venueInfo.bestPhoto.prefix}150x150${venueInfo.bestPhoto.suffix}`} alt={venueInfo.suffix}/>
-                                    <h3>{venueInfo.name}</h3>
+                                    <p>{venueInfo.name}</p>
                                     <p>{venueInfo.location.address}</p>
-                                    <p>{venueInfo.location.city}, {venueInfo.location.state} {venueInfo.location.postalCode}</p>
                                 </React.Fragment>
                             </InfoWindow>
                         )}
@@ -32,9 +31,8 @@ const MyMapComponent = withScriptjs(
                         {marker.isOpen && !venueInfo.bestPhoto && (
                             <InfoWindow>
                                 <React.Fragment>
-                                    <h3>{venueInfo.name}</h3>
+                                    <p>{venueInfo.name}</p>
                                     <p>{venueInfo.location.address}</p>
-                                    <p>{venueInfo.location.city}, {venueInfo.location.state} {venueInfo.location.postalCode}</p>
                                 </React.Fragment>
                             </InfoWindow>
                         )}
@@ -53,7 +51,7 @@ export default class Map extends Component {
                 {...this.props}
                 googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDjIulsGF6Vewp23S8iaRhbbLiKPuooeKA"
                 loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `100%`, width: `75%` }} />}
+                containerElement={<div style={{ height: `100%`, width: '75%' }} />}
                 mapElement={<div style={{ height: `100%` }} />}
             />
         );
