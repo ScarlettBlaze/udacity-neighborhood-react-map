@@ -1,3 +1,4 @@
+/* global google */
 import React, {Component} from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
 
@@ -9,13 +10,14 @@ const MyMapComponent = withScriptjs(
                 defaultCenter={{ lat: -34.397, lng: 150.644 }}
                 center={props.center}
             >
-            {props.markers && props.markers.filter(marker => marker.isVisible).map((marker, index) => {
+            {props.markers && props.markers.filter(marker => marker.isVisible).map((marker, index, array) => {
                 const venueInfo = props.venues.find(venue => venue.id === marker.id);
                 return (
                     <Marker 
                         key={index} 
                         position={{ lat: marker.lat, lng: marker.lng }} 
                         onClick={() => props.onMarkerClick(marker)}
+                        animation={array.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
                     >   
                         {/*If the marker is open and has a bestPhoto, open with everything listed.*/}
                         {marker.isOpen && venueInfo.bestPhoto && (
@@ -23,8 +25,8 @@ const MyMapComponent = withScriptjs(
                                 <React.Fragment>
                                     <img src={`${venueInfo.bestPhoto.prefix}150x150${venueInfo.bestPhoto.suffix}`} alt={venueInfo.suffix}/>
                                     <p>{venueInfo.name}</p>
-                                    <p>{venueInfo.location.address}</p>
-                                    <p>{venueInfo.location.city}, {venueInfo.location.state} {venueInfo.location.postalCode}</p>
+                                    <span>{venueInfo.location.address}<br/>
+                                    {venueInfo.location.city}, {venueInfo.location.state} {venueInfo.location.postalCode}</span>
                                 </React.Fragment>
                             </InfoWindow>
                         )}
@@ -33,8 +35,8 @@ const MyMapComponent = withScriptjs(
                             <InfoWindow>
                                 <React.Fragment>
                                     <p>{venueInfo.name}</p>
-                                    <p>{venueInfo.location.address}</p>
-                                    <p>{venueInfo.location.city}, {venueInfo.location.state} {venueInfo.location.postalCode}</p>
+                                    <span>{venueInfo.location.address}<br/>
+                                    {venueInfo.location.city}, {venueInfo.location.state} {venueInfo.location.postalCode}</span>
                                 </React.Fragment>
                             </InfoWindow>
                         )}

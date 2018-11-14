@@ -18,7 +18,7 @@
 }
 
 input#search {
-  width: 100%;
+  width: 20%;
   height: 2rem;
   font-size: 1rem;
   position: fixed;
@@ -31,7 +31,7 @@ ol.placeList {
 
 li.listItem {
   list-style: none;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   padding: .25em;
   margin-top: 1rem;
@@ -42,3 +42,9 @@ li.listItem {
   align-items: center;
 }
 
+span {
+  padding-left: 5px;
+  display: inline-block;
+  align-items: center;
+  line-height: normal;
+}

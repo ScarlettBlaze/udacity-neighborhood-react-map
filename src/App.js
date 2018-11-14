@@ -12,15 +12,18 @@ class App extends Component {
       venues: [],
       markers: [],
       center: [],
-      zoom: 12
-    }
+      zoom: 12,
+      updateSuperState: obj => {
+        this.setState(obj);
+      }
+    };
   }
 
   componentDidMount() {
     SquareAPI.search({
       near: "Houston, TX",
       query: "burgers",
-      limit: 10 
+      limit: 20 
     }).then(results => {
       const {venues} = results.response;
       const {center} = results.response.geocode.feature.geometry;
