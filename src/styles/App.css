@@ -10,9 +10,8 @@
 
 .sideBar {
   width: 100%;
-  top: 0;
-  bottom: 0;
-  background-color: rgb(37, 108, 167);
+  height: 100%;
+  background-color: black;
 }
 
 input#search {
@@ -22,10 +21,13 @@ input#search {
   position: relative;
   left: 0;
   top: 0;
+  display: flex;
 }
 
 ol.placeList {
   padding: 1rem;
+  background-color: black;
+  border-bottom-color: black;
 }
 
 li.listItem {
@@ -39,6 +41,7 @@ li.listItem {
   cursor: pointer;
   display: flex;
   align-items: center;
+  font-weight: 450;
 }
 
 span {
@@ -46,4 +49,14 @@ span {
   display: inline-block;
   align-items: center;
   line-height: normal;
+}
+a {
+  font-size: 44px;
+  align-self: top;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+html {
+  background-color: black;
 }

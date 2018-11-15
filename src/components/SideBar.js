@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import PlaceList from './PlaceList';
-//import '../styles/SideBar.css';
-
 
 export default class SideBar extends Component {
     constructor() {
         super();
         this.state = {
             query: '',
-            venues: []
+            venues: [],
         };
     }
 

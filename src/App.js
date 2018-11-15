@@ -14,7 +14,7 @@ class App extends Component {
       markers: [],
       center: [],
       zoom: 12,
-      menuOpen: true,
+      menuOpen: false,
       updateSuperState: obj => {
         this.setState(obj);
       }
@@ -43,11 +43,7 @@ class App extends Component {
   }
 
   handleStateChange (state) {
-    this.setState({menuOpen: state.isOpen})  
-  }
-
-  closeMenu () {
-    this.setState({menuOpen: false})
+    this.setState({menuOpen: state.isMenuOpen})  
   }
 
   toggleMenu () {
@@ -83,7 +79,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Menu isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)}>
+        <Menu onStateChange={(state) => this.handleStateChange(state)}>
             <SideBar 
               {...this.state} 
               onListItemClick={this.onListItemClick}
@@ -93,6 +89,7 @@ class App extends Component {
           {...this.state} 
           onMarkerClick={this.onMarkerClick}
         />
+        <a id="nav-toggle" aria-label="Home" tabIndex="1" onClick={this.toggleMenu}>&#9776;</a>
       </div>
     );
   }
