@@ -2,21 +2,24 @@
 
 ## How to Run
 
-1. Clone repository or download and extract the `.zip` file.
-2. Open a terminal and navigate to the root project folder.
-3. Run `npm install` in the terminal to install dependencies.
-4. Run `npm start` or `npm run start` to start the server.
-5. The main page should load in your default browser.
+1. Make sure the latest version of Node.js is installed.
+2. Clone repository or download and extract the `.zip` file.
+3. Open a terminal and navigate to the root project folder.
+4. Run `npm install` in the terminal to install dependencies.
+5. Run `npm start` or `npm run start` to start the server.
+6. The main page should load in your default browser.
 
 *** Press `Ctrl + c` to kill the server.
 
 ## Dependencies
-- Google Maps API
-- FourSquare API
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/get-api-key)
+- [FourSquare API](https://developer.foursquare.com/docs/api)
+- jQuery
+- [Node.js](https://nodejs.org/en/)
+
+## About Create React App
 
 *** This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
