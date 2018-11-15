@@ -89,7 +89,7 @@ class App extends Component {
           {...this.state} 
           onMarkerClick={this.onMarkerClick}
         />
-        <a id="nav-toggle" aria-label="Home" role="application" tabIndex="1" onClick={this.toggleMenu}>&#9776;</a>
+        <a id="nav-toggle" aria-label="Home" role="application" href="#" tabIndex="1" onClick={this.toggleMenu}>&#9776;</a>
       </div>
     );
   }
