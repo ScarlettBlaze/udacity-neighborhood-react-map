@@ -1,4 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Neighborhood React Map
+
+## How to Run
+
+1. Clone repository or download and extract the `.zip` file.
+2. Open a terminal and navigate to the root project folder.
+3. Run `npm install` in the terminal to install dependencies.
+4. Run `npm start` or `npm run start` to start the server.
+5. The main page should load in your default browser.
+
+*** Press `Ctrl + c` to kill the server.
+
+## Dependencies
+- Google Maps API
+- FourSquare API
+
+*** This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
